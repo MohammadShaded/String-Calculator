@@ -60,4 +60,34 @@ describe('Calculator', () => {
   it('should ignore numbers bigger than 1000', () => {
     expect(calc(2, '+', 1001)).toBe(2);
   });
+
+  // Edge case: no arguments should return 0
+  it('should return 0 when called with no arguments', () => {
+    expect(calc()).toBe(0);
+  });
+
+  // Edge case: single number should return that number
+  it('should return the number when a single number is provided', () => {
+    expect(calc(5)).toBe(5);
+  });
+
+  // Edge case: malformed (even number of args) should throw Invalid expression
+  it('should throw Invalid expression for incomplete expressions', () => {
+    expect(() => calc(1, '+')).toThrow('Invalid expression');
+  });
+
+  // Edge case: NaN input should throw Invalid input type
+  it('should throw Invalid input type for NaN', () => {
+    expect(() => calc(NaN, '+', 1)).toThrow('Invalid input type');
+  });
+
+  // Edge case: operator is not a string should throw Invalid operator
+  it('should throw Invalid operator when operator is not a string', () => {
+    expect(() => calc(1, 2, 3)).toThrow('Invalid operator');
+  });
+
+  // Edge case: multiplication with ignored number >1000
+  it('should treat numbers >1000 as ignored in multiplication', () => {
+    expect(calc(2, '*', 1001)).toBe(0);
+  });
 });

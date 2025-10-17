@@ -19,7 +19,8 @@ function calc(...args) {
     } else {
       // operator position
       const op = tokens[i];
-      if (typeof op !== 'string' || !isOperator(op)) {
+      // require operator to be a string; defer validity check to evaluation
+      if (typeof op !== 'string') {
         throw new Error('Invalid operator');
       }
     }

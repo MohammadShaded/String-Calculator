@@ -1,0 +1,23 @@
+{
+  "name": "stringcalculator-unit-test",
+  "version": "1.0.0",
+  "description": "Lightweight string-style calculator with a comprehensive Jest test suite. This repository is structured for Test-Driven Development (TDD): tests describe the required behavior and the implementation in `calculator.js` should make the tests pass.",
+  "main": "calculator.test.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammadShaded/String-Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohammadShaded/String-Calculator/issues"
+  },
+  "homepage": "https://github.com/MohammadShaded/String-Calculator#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
